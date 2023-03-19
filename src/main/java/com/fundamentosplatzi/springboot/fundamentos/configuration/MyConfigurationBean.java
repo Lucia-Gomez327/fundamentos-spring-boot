@@ -19,7 +19,7 @@ public class MyConfigurationBean {
         return new MyOperationImplement();
     };
     @Bean
-    public MyBeanWhitDependency beanWhitDependencyImplement(MyOperation myOperation){
+    public MyBeanWhitDependency beanOpertarionOperationWhitDependency(MyOperation myOperation){
         // se devuelve la implementacion de MyOperationImplement
         return new MyBeanWhitDependencyImplement(myOperation);
     };

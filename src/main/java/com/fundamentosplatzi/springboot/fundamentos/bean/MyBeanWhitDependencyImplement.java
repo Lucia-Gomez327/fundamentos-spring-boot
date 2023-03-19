@@ -11,6 +11,6 @@ public class MyBeanWhitDependencyImplement implements  MyBeanWhitDependency {
     public void printWhitDependency() {
         int num = 4;
         System.out.println(this.myOperation.suma(num));
-        System.out.println("hola desde ls implementacion de un bean co ndependencia");
+        System.out.println("hola desde la implementacion de un bean con dependencia");
     }
 }
