@@ -2,6 +2,7 @@ package com.fundamentosplatzi.springboot.fundamentos;
 
 import com.fundamentosplatzi.springboot.fundamentos.bean.MyBean;
 import com.fundamentosplatzi.springboot.fundamentos.bean.MyBeanWhitDependency;
+import com.fundamentosplatzi.springboot.fundamentos.bean.MyBeanWhitProperties;
 import com.fundamentosplatzi.springboot.fundamentos.component.ComponentDependencia;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -16,10 +17,13 @@ public class FundamentosApplication implements CommandLineRunner {
 	private MyBean  myBean;
 	private MyBeanWhitDependency myBeanWhitDependency;
 
-	public FundamentosApplication(@Qualifier("componentTowImplement") ComponentDependencia componentDependencia, MyBean myBean,MyBeanWhitDependency myBeanWhitDependency){
+	private MyBeanWhitProperties myBeanWhitProperties;
+
+	public FundamentosApplication(@Qualifier("componentTowImplement") ComponentDependencia componentDependencia, MyBean myBean,MyBeanWhitDependency myBeanWhitDependency,MyBeanWhitProperties myBeanWhitProperties){
 		this.componentDependencia = componentDependencia;
 		this.myBean = myBean;
 		this.myBeanWhitDependency = myBeanWhitDependency;
+		this.myBeanWhitProperties = myBeanWhitProperties;
 	}
 
 	/* misma forma de hacer lo de arriba
@@ -38,6 +42,7 @@ public class FundamentosApplication implements CommandLineRunner {
 		// usar la implementacion de myBean
 		this.myBean.print();
 		this.myBeanWhitDependency.printWhitDependency();
+		System.out.println(this.myBeanWhitProperties.function());
 	}
 
 
